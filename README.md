@@ -78,8 +78,8 @@ Example (first 5 rows):
 1.  **Normalization**: All inputs are normalized (case-insensitive, space trimming).
 2.  **Deduplication**: Duplicate site codes within a single student's rank list are removed (keeping the highest rank).
 3.  **Allocation Loop**:
-    *   Iterate through **Shifts** (1 to N).
-    *   Iterate through **Ranks** (1 to X).
+    *   Iterate through **Shifts** (1 to `SHIFT_ORDER`).
+    *   Iterate through **Ranks** (1 to `x`).
     *   Identify eligible candidates for each site who have not yet been assigned.
     *   Check constraints (Sex, Shift, Remaining Seats).
     *   **Lottery**: If candidates > available seats, a random selection is performed.
