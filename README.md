@@ -32,7 +32,17 @@ Contains student details and their ranked choices.
 *   **Values**:
     *   `sex`: `Male`, `Female`
     *   `shift`: Integer (e.g., `1`, `2`)
-    *   `rank n`: The code of the internship site.
+    *   `rank x`: The code of the internship site.
+
+Example (first 5 rows):
+
+| student_name | student_id | sex | shift | rank1 | rank2 | rank3 | rank4 | rank5 |
+|---|---:|---|---:|---|---|---|---|---|
+| d4743cd5a0e8a401b83d139eb924235143cf5394a28730... | XXXXXXXXXX | male | 2 | FCN49 | FCN49 | FCN49 | FCN49 | FCN49 |
+| ee5fa7606916cc9994d1c1a6f986f3b4926377c49d8923... | XXXXXXXXXX | male | 2 | FCN62 | FCN60 | FCN61 | FCN64 | FCN59 |
+| 79cb28ef79b086da8546693c0c362f957d3211d403fa2b... | XXXXXXXXXX | male | 1 | BTS05 | HPT01 | BTS20 | BTS14 | BTS12 |
+| 6e5cf96bde58559be4f0423fa9c3149eae506f78c3b862... | XXXXXXXXXX | female | 1 | FCN68 | FCN55 | PUR04 | FCN67 | FCN66 |
+| e50488993ca3e7c428c8d21ccc546a588093234e6fb6d2... | XXXXXXXXXX | female | 2 | FCN41 | FCN32 | CEN03 | BTS15 | FCN31 |
 
 ### 2. Drugstore/Site File (`drugstore_path.csv`)
 Contains details about internship sites, capacities, and requirements.
@@ -41,12 +51,22 @@ Contains details about internship sites, capacities, and requirements.
     *   `sex_require{i}`: `Male`, `Female`, `Both`
     *   `seat{i}`: Integer (number of available seats for shift `i`).
 
+Example (first 5 rows):
+
+| code | branch | sex_require1 | seat1 | sex_require2 | seat2 |
+|---|---|---|---:|---|---:|
+| CEN01 | 6 สโมสรวัฒนธรรมหญิง | both | 2.0 | both | 2.0 |
+| CEN02 | 7 บุญมี ปุรุราชรังสรรค์ | both | 2.0 | NaN | NaN |
+| CEN03 | 19 วงศ์สว่าง | male | 1.0 | male | 1.0 |
+| CEN04 | 20 ป้อมปราบศัตรูพ่าย | NaN | NaN | both | 2.0 |
+| CEN05 | 23 สี่พระยา | male | 1.0 | male | 1.0 |
+
 ## Usage
 
 1.  **Prepare Data**: Ensure `student_selection.csv` and `drugstore_path.csv` are formatted correctly and placed in the project folder.
 2.  **Configure**: Open `internshipPlacementSelectionSystem.ipynb`. In **Cell 1**, you can adjust:
-    *   `x`: Number of ranks per student.
-    *   `SHIFT_ORDER`: Number of shifts to process.
+    *   `x`: Number of ranks per student (should match the student selection file)
+    *   `SHIFT_ORDER`: Indicates how many shifts will be processed. If there is only one shift, or if you prefer to manually separate each shift, set this value to 1. In that case, ensure that the shift column in the student selection file is also set to 1.
     *   `random_seed`: Set a seed for reproducible results (optional).
 3.  **Run**: Execute the notebook cells from top to bottom.
 4.  **Results**:
