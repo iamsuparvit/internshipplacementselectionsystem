@@ -87,9 +87,20 @@ Example (first 5 rows):
 
 ## Output
 
-The output file contains the original student data plus:
+The output file contains the original student data (`student_name` and `student_id`) plus:
 *   `rank_result`: The rank number they were assigned (0 if not selected).
 *   `result`: The code of the assigned site (or "Not selected").
+*   `branch`: The branch name of the assigned site (empty if not selected).
+
+Example (first 5 rows):
+
+| student_name | student_id | rank_result | result | branch |
+|---|---:|---:|---|---|
+| d4743cd5a0e8a401b83d139eb924235143cf5394a28730... | XXXXXXXXXX | 0 | Not selected |  |
+| ee5fa7606916cc9994d1c1a6f986f3b4926377c49d8923... | XXXXXXXXXX | 1 | FCN62 | บ้านดู่ |
+| 79cb28ef79b086da8546693c0c362f957d3211d403fa2b... | XXXXXXXXXX | 1 | BTS05 | Q House Lumpini |
+| 6e5cf96bde58559be4f0423fa9c3149eae506f78c3b862... | XXXXXXXXXX | 1 | FCN68 | ตลาดหนองดอก ลำพูน |
+| e50488993ca3e7c428c8d21ccc546a588093234e6fb6d2... | XXXXXXXXXX | 1 | FCN41 | คาลเท็กซ์-ราชพฤกษ์ |
 
 ## License
 
